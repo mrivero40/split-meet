@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dividir gastos de reunión</title>
+    <script>
+      const savedTheme = localStorage.getItem("splitMeetTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+      document.documentElement.dataset.theme = initialTheme;
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Reparto de gastos</p>
+          <h1>Calculá cuánto paga o recibe cada participante</h1>
+          <p>
+            Ingresá el nombre de cada persona y el importe que pagó durante la
+            reunión. El cálculo se actualiza automáticamente.
+          </p>
+        </div>
+
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Cambiar tema"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span id="theme-toggle-label">Modo oscuro</span>
+        </button>
+      </header>
+
+      <section class="workspace" aria-label="Calculadora de gastos">
+        <form class="panel" id="participants-form">
+          <div class="panel-header">
+            <div>
+              <h2>Participantes</h2>
+              <p>Cargá al menos dos personas.</p>
+            </div>
+            <div class="form-actions">
+              <button class="secondary-button small-button" id="reset-split" type="button">
+                Nueva cuenta
+              </button>
+              <button class="secondary-button" id="add-participant" type="button">
+                Agregar
+              </button>
+            </div>
+          </div>
+
+          <div class="participants-list" id="participants-list"></div>
+
+          <button class="primary-button" type="submit">Calcular reparto</button>
+        </form>
+
+        <section class="panel results-panel" id="results" hidden>
+          <div class="stats">
+            <div>
+              <span>Total gastado</span>
+              <strong id="total-amount">$0,00</strong>
+            </div>
+            <div>
+              <span>Por persona</span>
+              <strong id="average-amount">$0,00</strong>
+            </div>
+          </div>
+
+          <div class="result-block">
+            <h2>Saldo individual</h2>
+            <ul class="result-list" id="summary-list"></ul>
+          </div>
+
+          <div class="result-block">
+            <h2>Pagos sugeridos</h2>
+            <ul class="result-list transfers" id="transfers-list"></ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="panel history-panel" aria-label="Historial de cuentas">
+        <div class="panel-header">
+          <div>
+            <h2>Historial de cuentas anteriores</h2>
+            <p>Las últimas cuentas calculadas quedan guardadas en este navegador.</p>
+          </div>
+          <button class="secondary-button" id="clear-history" type="button">
+            Borrar historial
+          </button>
+        </div>
+
+        <p class="empty-state" id="history-empty">
+          Todavía no hay cuentas guardadas.
+        </p>
+        <ul class="history-list" id="history-list"></ul>
+      </section>
+
+      <footer class="site-footer">
+        <img
+          class="footer-logo footer-logo-light"
+          src="img/logo-mrivero-black.png"
+          alt="M Rivero"
+          width="598"
+          height="98"
+        />
+        <img
+          class="footer-logo footer-logo-dark"
+          src="img/logo-mrivero-white.png"
+          alt="M Rivero"
+          width="598"
+          height="98"
+        />
+        <div class="footer-copy">
+          <p class="visitor-counter">
+            <strong id="visit-count">0</strong>
+            visitantes ya sacaron sus cuentas
+          </p>
+          <p>Copyright &copy; <span id="current-year"></span> M Rivero</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
