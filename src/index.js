@@ -132,8 +132,8 @@ function resetCurrentSplit() {
   totalAmount.textContent = formatMoney(0);
   averageAmount.textContent = formatMoney(0);
   hideCurrentResults();
-  createParticipantRow("Persona 1", "0");
-  createParticipantRow("Persona 2", "0");
+  createParticipantRow("Nombre", "0");
+  createParticipantRow("Nombre", "0");
 }
 
 function selectInputContent(input) {

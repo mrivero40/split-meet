@@ -472,6 +472,30 @@ button:focus-visible {
   font-weight: 700;
 }
 
+.github-link,
+.social-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-self: end;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.github-link:hover,
+.social-link:hover {
+  color: var(--accent-strong);
+}
+
+.github-link svg,
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .visitor-counter {
   display: inline-flex;
   gap: 6px;
@@ -484,6 +508,14 @@ button:focus-visible {
   background: var(--accent-soft);
   color: var(--accent-strong);
   font-size: 0.95rem;
+}
+
+.made-with {
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -555,5 +587,10 @@ button:focus-visible {
   .footer-copy {
     justify-items: start;
     text-align: left;
+  }
+
+  .github-link,
+  .social-link {
+    justify-self: start;
   }
 }

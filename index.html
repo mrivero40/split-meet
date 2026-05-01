@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dividir gastos de reunión</title>
+    <title>🍻 Calculá la cuenta de la juntada</title>
     <script>
       const savedTheme = localStorage.getItem("splitMeetTheme");
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -17,11 +17,11 @@
     <main class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Reparto de gastos</p>
-          <h1>Calculá cuánto paga o recibe cada participante</h1>
+          <p class="eyebrow">División de gastos</p>
+          <h1>Calculá la cuenta de la juntada 🍻</h1>
           <p>
-            Ingresá el nombre de cada persona y el importe que pagó durante la
-            reunión. El cálculo se actualiza automáticamente.
+            Ingresá el nombre de cada persona y el importe que pagó para la
+            reunión.
           </p>
         </div>
 
@@ -56,7 +56,7 @@
           <div class="participants-list" id="participants-list"></div>
 
           <div class="submit-actions">
-            <button class="primary-button" type="submit">Calcular reparto</button>
+            <button class="primary-button" type="submit">Calcular </button>
             <button class="secondary-button add-button" id="add-participant" type="button">
               Agregar
             </button>
@@ -90,7 +90,7 @@
       <section class="panel history-panel" aria-label="Historial de cuentas">
         <div class="panel-header">
           <div>
-            <h2>Historial de cuentas anteriores</h2>
+            <h2>Historial de cuentas</h2>
             <p>Las últimas cuentas calculadas quedan guardadas en este navegador.</p>
           </div>
           <button class="secondary-button" id="clear-history" type="button">
@@ -103,6 +103,8 @@
         </p>
         <ul class="history-list" id="history-list"></ul>
       </section>
+
+      <p class="made-with">✨ Creado con buena onda y vibe coding para los amigos.</p>
 
       <footer class="site-footer">
         <img
@@ -122,9 +124,51 @@
         <div class="footer-copy">
           <p class="visitor-counter">
             <strong id="visit-count">0</strong>
-            visitantes ya sacaron sus cuentas
+            veces ingresaste por tus cuentas.
           </p>
-          <p>Copyright &copy; <span id="current-year"></span> M Rivero</p>
+          <a
+            class="github-link"
+            href="https://github.com/mrivero40/split-meet"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver repositorio en GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.71 0 0 .84-.28 2.75 1.05A9.31 9.31 0 0 1 12 6.96c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.06 10.06 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"
+              />
+            </svg>
+            GitHub
+          </a>
+          <a
+            class="social-link"
+            href="https://instagram.com/mendohardware"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver Instagram de Mendo Hardware"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.95 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7.25A4.75 4.75 0 1 1 12 16.75 4.75 4.75 0 0 1 12 7.25Zm0 2A2.75 2.75 0 1 0 12 14.75 2.75 2.75 0 0 0 12 9.25Z"
+              />
+            </svg>
+            Instagram
+          </a>
+          <a
+            class="social-link"
+            href="https://facebook.com/matiasrvo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver Facebook de Matias Rivero"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M13.5 21.5v-8h2.68l.42-3.11h-3.1V8.42c0-.9.25-1.51 1.54-1.51h1.66V4.14A22.16 22.16 0 0 0 14.28 4c-2.39 0-4.03 1.46-4.03 4.14v2.25H7.55v3.11h2.7v8h3.25Z"
+              />
+            </svg>
+            Facebook
+          </a>
+          <p>Copyright &copy; <span id="current-year"></span> Matias E. Rivero (mrivero)</p>
         </div>
       </footer>
     </main>
