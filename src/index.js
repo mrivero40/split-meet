@@ -136,6 +136,11 @@ function resetCurrentSplit() {
   createParticipantRow("Persona 2", "0");
 }
 
+function selectInputContent(input) {
+  input.addEventListener("focus", () => input.select());
+  input.addEventListener("click", () => input.select());
+}
+
 function createParticipantRow(name = "", amount = "") {
   const row = document.createElement("div");
   row.className = "participant-row";
@@ -174,6 +179,7 @@ function createParticipantRow(name = "", amount = "") {
     }
   });
 
+  row.querySelectorAll("input").forEach(selectInputContent);
   participantsList.appendChild(row);
 }
 
