@@ -141,7 +141,7 @@ function selectInputContent(input) {
   input.addEventListener("click", () => input.select());
 }
 
-function createParticipantRow(name = "", amount = "") {
+function createParticipantRow(name = "", amount = "0") {
   const row = document.createElement("div");
   row.className = "participant-row";
   row.innerHTML = `
@@ -160,7 +160,6 @@ function createParticipantRow(name = "", amount = "") {
       <input
         type="number"
         name="amount"
-        placeholder="0"
         min="0"
         step="0.01"
         value="${amount}"
